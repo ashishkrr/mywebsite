@@ -5,7 +5,9 @@ import { ContentList } from '../components/ContentList'
 import { Photo } from '../components/Photo'
 import { ChangeStyleOnHover } from '../hooks/common'
 
-export const Landing = () => {
+const pages = ['Blog', 'Projects', 'TechTalk', 'AboutMe']
+
+export const Home = () => {
   return (
     <div 
         style={{
@@ -18,11 +20,23 @@ export const Landing = () => {
             backgroundPosition: "center"
         }}
     >
-        <Photo />
-        <ProfileName />
-        <p style={{fontSize: "1.68em", color: "#B3B4B5"}}>IT Professional</p>
+    <Photo />
+    <ProfileName />
+    <p style={{
+        fontSize: "1.68em", 
+        color: "#B3B4B5"
+    }}>IT Professional</p>
+    <ListOFPageNav />
     </div>
   )
+}
+
+const ListOFPageNav = () => {
+    return <div>
+        {pages.map((page, index) => {
+            return <ContentList key={index} label={page} />
+        })};
+    </div>
 }
 
 export const ProfileName = () => {
@@ -33,7 +47,6 @@ export const ProfileName = () => {
             onMouseLeave={(event) => hoverOutText()}
         
         >
-            
             <h2 
                 style={{
                     color: "white",
@@ -46,11 +59,10 @@ export const ProfileName = () => {
                 style={{ 
                     borderBlockEnd: "2px solid white",
                     opacity: borderStyleOpacity.opacity
-                    
                 }}
             >
         </div>
-        </div>
+    </div>
         
     )
 }

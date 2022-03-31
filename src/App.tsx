@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Landing } from './pages/Landing';
+import { Home } from './pages/Home';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Landing />
+    <Home />
   );
 }
 
