@@ -5,11 +5,11 @@ export const Photo = () => {
   return (
     <div 
         style={{
-            width: 160, 
-            height: 160, 
+            width: 9,
             backgroundColor: "red", 
             borderRadius: "50%", 
             marginTop: 25,
+            padding: 80,
             backgroundImage: `url(${profilePhoto})`,
             backgroundSize: 'cover',
             backgroundRepeat: "no-repeat"

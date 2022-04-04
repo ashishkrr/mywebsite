@@ -1,6 +1,7 @@
 import Avatar from '@mui/material/Avatar'
-import React from 'react'
+import React, { useState } from 'react'
 import LandingBg from '../assets/images/code.jpg'
+import ContactWay from '../components/ContactWay'
 import { ContentList } from '../components/ContentList'
 import { Photo } from '../components/Photo'
 import { ChangeStyleOnHover } from '../hooks/common'
@@ -8,14 +9,24 @@ import { ChangeStyleOnHover } from '../hooks/common'
 const pages = ['Blog', 'Projects', 'TechTalk', 'AboutMe']
 
 export const Home = () => {
+    const [flex, setFlex] = useState(1);
+    const [position, setPosition] = useState("center");
+    const changeView=() => {
+        setFlex(3);
+        setPosition("")
+    }
   return (
     <div 
+        onScroll={changeView}
         style={{
             display: "flex", 
+            flex: 1,
             flexDirection: "column", 
             alignItems: "center", 
             backgroundImage: `url(${LandingBg})`, 
-            height: "100vh", width: "100vw", 
+            height: "100vh", 
+            width: "100vw",
+            overflow: "auto",
             backgroundSize: "cover", 
             backgroundPosition: "center"
         }}
@@ -27,6 +38,12 @@ export const Home = () => {
         color: "#B3B4B5"
     }}>IT Professional</p>
     <ListOFPageNav />
+    <ContactWay />
+    <div>
+        <p>HiHi</p>
+        <p>HiHi</p>
+        <p>HiHi</p>
+    </div>
     </div>
   )
 }

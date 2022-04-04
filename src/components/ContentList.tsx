@@ -13,7 +13,7 @@ export const ContentList: React.FunctionComponent<ContentListProps> = ({label, l
         display: "flex", 
         width: 200,
         height: 50,
-        marginTop: 15,
+        padding: 5,
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column"
@@ -28,9 +28,10 @@ export const ContentList: React.FunctionComponent<ContentListProps> = ({label, l
       onMouseLeave={(event) => hoverOutText()}
       >
         <p style={{
-              fontSize: "1.68em", 
-              color: "white",
-              opacity: "revert"
+            fontSize: "1.68em", 
+            color: "white",
+            opacity: "revert",
+            cursor: "pointer"
           }}>{label}
         </p>
       </div>
