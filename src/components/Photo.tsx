@@ -8,7 +8,7 @@ export const Photo = () => {
             width: 9,
             backgroundColor: "red", 
             borderRadius: "50%", 
-            marginTop: 25,
+            margin: "25px auto auto auto",
             padding: 80,
             backgroundImage: `url(${profilePhoto})`,
             backgroundSize: 'cover',

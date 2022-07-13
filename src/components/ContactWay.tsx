@@ -12,53 +12,12 @@ export default function ContactWay() {
     <div style={{
         display: "flex",
         flex: 1,
-        justifyContent: "space-around",
-        width: "300px",
+        justifyContent: "center",
         padding: 20
       }}>
-        {icons.map((icon, index) => {
-          return <DisplayIcon key={index} icon={icon} />
-        })}
-      {/* <MailIcon style={{
-          color:'white', 
-          fontSize: 40,
-          borderBlockEnd: "2px solid white",
-          padding: 20,
-          opacity: borderStyleOpacity.opacity,
-        }}
-        onMouseEnter={(event) => hoverOnText()}
-        onMouseLeave={(event) => hoverOutText()}
-      />
-      <TwitterIcon style={{
-          color:'white',
-          fontSize: 40,
-          borderBlockEnd: "2px solid white",
-          padding: 20,
-          opacity: borderStyleOpacity.opacity,
-        }}
-        onMouseEnter={(event) => hoverOnText()}
-        onMouseLeave={(event) => hoverOutText()}
-      />
-      <GitHubIcon style={{
-          color:'white', 
-          fontSize: 40,
-          borderBlockEnd: "2px solid white",
-          padding: 20,
-          opacity: borderStyleOpacity.opacity,
-        }}
-        onMouseEnter={(event) => hoverOnText()}
-        onMouseLeave={(event) => hoverOutText()}
-      />
-      <YouTubeIcon style={{
-          color:'white',
-          fontSize: 40,
-          borderBlockEnd: "2px solid white",
-          padding: 20,
-          opacity: borderStyleOpacity.opacity
-        }}
-        onMouseEnter={(event) => hoverOnText()}
-        onMouseLeave={(event) => hoverOutText()}
-      /> */}
+      {icons.map((icon, index) => {
+        return <DisplayIcon key={index} icon={icon} />
+      })}
     </div>
   )
 }
@@ -70,9 +29,8 @@ const DisplayIcon = (props: any) => {
         style={{
           color:'white',
           fontSize: 40,
-          borderBlockEnd: "2px solid white",
-          padding: 20,
-          opacity: borderStyleOpacity.opacity
+          borderBlockEnd: `2px solid rgba(255, 255, 255, ${borderStyleOpacity.opacity})`,
+          padding: 20
         }}
         onMouseEnter={() => hoverOnText()}
         onMouseLeave={() => hoverOutText()}

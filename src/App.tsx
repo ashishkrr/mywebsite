@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Home } from './pages/Home';
+import { store } from './redux/reducer/store';
+import { Provider } from 'react-redux';
+
+const data = {
+  "name": "ashish",
+  "roll": "016"
+}
+
+store.subscribe(() => console.log(store.getState()))
+
+export const userData = createContext(data)
 
 function App() {
   return (
@@ -21,7 +32,9 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Home />
+    <Provider store={store}>
+      <Home />
+    </Provider>
   );
 }
 
