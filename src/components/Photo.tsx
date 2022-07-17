@@ -5,7 +5,7 @@ export const Photo = () => {
   return (
     <div 
         style={{
-            width: 9,
+            width: 7,
             backgroundColor: "red", 
             borderRadius: "50%", 
             margin: "25px auto auto auto",

@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { incrementScore } from '../redux/reducer/incrementScore';
 import "../App.css"
 import { padding } from '@mui/system'
+import Posts from '../components/FeaturePost'
 
 const pages = ['Blog', 'Projects', 'TechTalk', 'AboutMe']
 const icons = [MenuRoundedIcon, BrightnessMediumRoundedIcon, SearchIcon]
@@ -24,11 +25,11 @@ export const Home = () => {
     const [sectionWidth, setSectionWidth] = useState("100%");
     const changeView=() => {
         setFlex("flex-start");
-        setSectionWidth("350px")
+        setSectionWidth("30%")
     }
   return (
     <div style={{display: "flex", flex: 1, flexDirection: "row", justifyContent: flex}}>
-        <div 
+        <section 
             onScroll={changeView}
             style={{
                 backgroundImage: `url(${LandingBg})`, 
@@ -37,7 +38,9 @@ export const Home = () => {
                 overflow: "auto",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                boxShadow: '0px 10px 10px 10px #E6E6E6'
+                boxShadow: '0px 10px 10px 10px #E6E6E6',
+                position: "fixed",
+                overflowX: "hidden"
             }}
         >
             <Photo />
@@ -54,37 +57,38 @@ export const Home = () => {
                 <p>HiHi</p>
                 <p>HiHi</p> */}
             </div>
-        </div>
+        </section>
         {
         flex == "flex-start" ? 
-            <div style={{display: "flex", flex: 1, flexDirection: "column", marginInline: "75px"}}>
-                <div onClick={() => console.log()} style={{backgroundColor: "white", position: "absolute", right: 0, height: 90}}>
-                    <GitHubIcon style={{color: "grey", fontSize: 30, padding: 20, cursor: "pointer"}} />
-                </div>
-                <div style={{display: "flex", flexDirection: "row", height: 90, justifyContent: "end", width: "100%"}}>
-                    {/* <div style={{flex: 1, backgroundColor: "white", display: "flex", alignItems: "center"}}></div> */}
-                    <div 
-                        style={{
-                            flex: 10,
-                            display: "flex",
-                            backgroundColor: "white",
-                            alignItems: "center",
-                            boxShadow: '0px 25px 5px -5px rgba(136, 136, 136, 0.3)'
-                        }}>
-                            {icons.map((icon, index) => {
-                                return <DisplayIcon key={index} icon={icon} />
-                        })}
+            <div style={{position: "absolute", left: "30%", width: "70%"}}>
+                <section style={{display: "flex", flex: 1, flexDirection: "column", marginInline: "75px"}}>
+                    <div onClick={() => console.log()} style={{backgroundColor: "white", position: "absolute", right: 0, height: 90}}>
+                        <GitHubIcon style={{color: "grey", fontSize: 30, padding: 20, cursor: "pointer"}} />
                     </div>
-                </div>
-                <div  style={{marginTop: 20, padding: 15}} className='page-content'>
-                    <header>
-                        <h1 className="page-title">Hi there!</h1>
+                    <div style={{display: "flex", flexDirection: "row", height: 90, justifyContent: "end", width: "100%"}}>
+                    {/* <div style={{flex: 1, backgroundColor: "white", display: "flex", alignItems: "center"}}></div> */}
                         <div 
                             style={{
-                                borderBlockEnd: `1px solid rgba(163, 163, 163, 0.3)`,
-                            }} className="hr pb0">
+                                flex: 10,
+                                display: "flex",
+                                backgroundColor: "white",
+                                alignItems: "center",
+                                boxShadow: '0px 25px 5px -5px rgba(136, 136, 136, 0.3)'
+                            }}>
+                                {icons.map((icon, index) => {
+                                    return <DisplayIcon key={index} icon={icon} />
+                            })}
                         </div>
-                    </header>
+                    </div>
+                    <div  style={{marginTop: 20, padding: 15}} className='page-content'>
+                        <header>
+                            <h1 className="page-title">Hi there!</h1>
+                            <div 
+                                style={{
+                                    borderBlockEnd: `1px solid rgba(163, 163, 163, 0.3)`,
+                                }} className="hr pb0">
+                            </div>
+                        </header>
                     <p 
                         style={{
                             fontFamily: 'Noto Sans, Helvetica, Arial, sans-serif',
@@ -112,6 +116,8 @@ export const Home = () => {
                         }}>“If someone is in need, lend them a helping hand. Do not wait for a thank you.”</p>
                     </div>
                 </div>
+                <Posts label={'Featured Posts'} />
+            </section>
             </div>
             : <></>
         }
