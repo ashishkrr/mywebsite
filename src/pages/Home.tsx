@@ -1,5 +1,4 @@
-import Avatar from '@mui/material/Avatar'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import LandingBg from '../assets/images/code.jpg'
 import ContactWay from '../components/ContactWay'
 import { ContentList } from '../components/ContentList'
@@ -9,18 +8,16 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import BrightnessMediumRoundedIcon from '@mui/icons-material/BrightnessMediumRounded';
 import SearchIcon from '@mui/icons-material/Search';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { useDispatch, useSelector } from 'react-redux'
-import { incrementScore } from '../redux/reducer/incrementScore';
 import "../App.css"
-import { padding } from '@mui/system'
 import Posts from '../components/FeaturePost'
+import { MoreBlog } from '../components/MoreBlog'
+import Footer from '../components/Footer'
+import { WhoIAm } from '../components/WhoIAm'
 
 const pages = ['Blog', 'Projects', 'TechTalk', 'AboutMe']
 const icons = [MenuRoundedIcon, BrightnessMediumRoundedIcon, SearchIcon]
 
 export const Home = () => {
-    const countNumb = useSelector((state) => console.log(state));
-    const dispatch = useDispatch();
     const [flex, setFlex] = useState("center");
     const [sectionWidth, setSectionWidth] = useState("100%");
     const changeView=() => {
@@ -117,6 +114,9 @@ export const Home = () => {
                     </div>
                 </div>
                 <Posts label={'Featured Posts'} />
+                <MoreBlog label={'Blog'} />
+                <WhoIAm />
+                <Footer />
             </section>
             </div>
             : <></>

@@ -44,8 +44,14 @@ const PostItems: React.FunctionComponent = () => {
             textAlign: "center",
             color: "rgb(51, 51, 51)",
             fontWeight: 700,
-            textDecoration: "underline 2px solid rgb(53, 141, 208)"
-        }}>Cooking Effective Code Reviews</h2>
+        }}><a style={{
+            textUnderlineOffset: "0.35rem",
+            textDecorationThickness: "2px",
+            textDecorationStyle: "solid",
+            textDecorationColor: "rgb(154,198,231)",
+            color: "black",
+            fontWeight: 700
+        }} href="/blog/">Cooking Effective Code Reviews</a></h2>
         <p style={{
             fontFamily: "Noto Sans",
             color: "rgb(51, 51, 51)",

@@ -1,0 +1,8 @@
+.footer-nav {
+    text-underline-offset: 0.35rem;
+    text-decoration-thickness: 2px;
+    text-decoration-style: solid;
+    text-decoration-color: rgb(154, 198, 231);
+    color: black;
+    font-weight: 700;
+}
