@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PostImage from '../assets/images/cooking_effective_code_reviews_featured.jpg';
+import useWindowDimensions from '../hooks/dimension';
 
 const featurePost = [1, 2, 3, 4, 5, 6];
 
@@ -18,7 +19,7 @@ const Posts: React.FunctionComponent<PostsProps> = ({label}) => {
                 marginLeft: "15px"
             }}
         >{label}</h2>
-        <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between"}}>
+        <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between", padding: "2%"}}>
             {featurePost.map((data, index) =>{
                 return <PostItems key={index} />
             })}
@@ -31,11 +32,20 @@ export default Posts;
 
 
 const PostItems: React.FunctionComponent = () => {
-    return <div style={{
-        width: "48.5%", 
-        height: "50%",
-        boxShadow: "10px 5px 10px rgba(136, 136, 136, 0.3), -10px 5px 10px rgba(136, 136, 136, 0.3)",
-        marginBottom: "1.08rem"
+    const { height, width } = useWindowDimensions();
+    const [ onHoverTop, setOnHoverTop ] = useState("0px");
+    
+    return <div 
+            onMouseOver={() => setOnHoverTop("-5px")}
+            onMouseOut={() => setOnHoverTop("0px")}
+            style={{
+            width: width <= 600 ? "98%" : "48.5%", 
+            height: "30%",
+            boxShadow: "10px 5px 10px rgba(136, 136, 136, 0.3), -10px 5px 10px rgba(136, 136, 136, 0.3)",
+            marginBottom: "1.08rem",
+            position: "relative",
+            transition: "top ease 0.2s",
+            top: onHoverTop
         }}>
         <img width={"100%"} height={"40%"} style={{objectFit: "cover"}} src={PostImage} alt="loading..." />
         <h2 style={{

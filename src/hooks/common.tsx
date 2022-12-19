@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 export const ChangeStyleOnHover = () => {
-
     const [borderStyleOpacity, setBorderStyleOpacity] = useState({opacity: 0.2});
 
     const hoverOnText = () => {
@@ -13,3 +12,6 @@ export const ChangeStyleOnHover = () => {
     }
     return { borderStyleOpacity, hoverOnText, hoverOutText }
 }
+
+/////////////////////////////////////////////////////////////
+
